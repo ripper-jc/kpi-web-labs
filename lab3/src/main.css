@@ -1,0 +1,96 @@
+.navbar-brand img{
+    width: 10em;
+}
+nav{
+    padding: 0!important;
+}
+hr{
+    margin: 5px!important;
+}
+.card_nav{
+    display: flex;
+    padding: 0 15px;
+    
+}
+.card_text{
+    font-size: 0.9em;
+    line-height: 110%;
+    color: rgb(81, 81, 81);
+}
+.nav_img{
+    width: 2em;
+    height: 2em;
+    border-radius: 100%;
+    margin: 0 10px;
+}
+.social{
+    width: 1em!important;
+    margin: 0 5px;
+}
+.read_more{
+    height: auto;
+    background-image: url("doctor_readme.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
+.read_more .col-md-4{
+    padding: 10em 0;
+    text-align: center;
+}
+
+.gallery{
+    text-align: center;
+    color: white;
+}
+.gallery{
+    height: auto;
+    background-image: url("hospital@0.75x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.row img{
+    width: 100%;
+    border-radius: 5%;
+}
+.row{
+    margin-bottom: 15px;
+}
+.gallery h2, p{
+    padding: 0.5em 0;
+}
+
+.our_team{
+    text-align: center;
+    margin: 5em 0 0 0;
+}
+
+.card img{
+    border-radius: 100%;
+}
+.card{
+    text-align: center;
+}
+.card .media img{
+    border-radius: 0%!important;
+}
+
+
+footer{
+    color: white;
+    padding: 20px 0;
+}
+.footer .media{
+    
+    background-color: white;
+}
+.footer_social{
+    filter: invert();
+    width: 1.5em!important;
+    margin: 10px;
+}
+.get_in_touch img{
+    width: 2em;
+    filter: invert(50%);
+}

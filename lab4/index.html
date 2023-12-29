@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <h1>Ilchenko Matvii TR-24</h1>
+    <button onclick="performTasks()">Perform Tasks</button>
+    <div id="output"></div>
+
+    <script>
+        // 1. Створити об’єкт «Співробітник» з властивостями «Прізвище», «Ім’я», «стать», «вік».
+let Employee = function(surname, name, gender, age) {
+    this.surname = surname;
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
+};
+
+// 2. Створити об’єкт «Зарплата», що містить властивостями «Посада» і «Ставка» і методи: порахувати зарплату, змінити ставку, вивести.
+let Salary = function(position, rate) {
+    this.position = position;
+    this.rate = rate;
+};
+
+Salary.prototype.calculateSalary = function(hours) {
+    return this.rate * hours;
+};
+
+Salary.prototype.changeRate = function(newRate) {
+    this.rate = newRate;
+};
+
+Salary.prototype.display = function() {
+    return `Position: ${this.position}, Rate: ${this.rate}`;
+};
+
+// 3. Реалізувати копіювання властивостей і методів об’єктів «Співробітник» і «Зарплата».
+let copyPropertiesAndMethods = function(sourceObj, targetObj) {
+    for (let prop in sourceObj) {
+        if (sourceObj.hasOwnProperty(prop)) {
+            targetObj[prop] = sourceObj[prop];
+        }
+    }
+};
+
+// 4. Додати в прототип об’єкту «Співробітник» метод «Показати дані»
+Employee.prototype.showData = function() {
+    return `Surname: ${this.surname}, Name: ${this.name}, Gender: ${this.gender}, Age: ${this.age}`;
+};
+
+// 5. Створити об’єкт «Керівник», що наслідує властивості і методи об’єкту «Співробітник» і має власну властивість «Відділ». Перевизначити в об’єкті «Керівник» метод «Показати дані».
+let Manager = function(surname, name, gender, age, department) {
+    Employee.call(this, surname, name, gender, age);
+    this.department = department;
+};
+
+Manager.prototype = Object.create(Employee.prototype);
+Manager.prototype.constructor = Manager;
+
+Manager.prototype.showData = function() {
+    let employeeData = Employee.prototype.showData.call(this);
+    return `${employeeData}, Department: ${this.department}`;
+};
+
+        class EmployeeClass {
+            constructor(surname, name, gender, age) {
+                this.surname = surname;
+                this.name = name;
+                this.gender = gender;
+                this.age = age;
+            }
+
+            get surname() {
+                return this._surname;
+            }
+
+            get name() {
+                return this._name;
+            }
+
+            get gender() {
+                return this._gender;
+            }
+
+            get age() {
+                return this._age;
+            }
+
+            set surname(newSurname) {
+                this._surname = newSurname;
+            }
+
+            set name(newName) {
+                this._name = newName;
+            }
+
+            set gender(newGender) {
+                this._gender = newGender;
+            }
+
+            set age(newAge) {
+                this._age = newAge;
+            }
+
+            showData() {
+                return `Surname: ${this.surname}, Name: ${this.name}, Gender: ${this.gender}, Age: ${this.age}`;
+            }
+        }
+
+        class ManagerClass extends EmployeeClass {
+            constructor(surname, name, gender, age, department) {
+                super(surname, name, gender, age);
+                this.department = department;
+            }
+
+            get department() {
+                return this._department;
+            }
+
+            set department(newDepartment) {
+                this._department = newDepartment;
+            }
+
+            showData() {
+                let employeeData = super.showData();
+                return `${employeeData}, Department: ${this.department}`;
+            }
+        }
+
+        function performTasks() {
+            let employee = new EmployeeClass('Ivanov', 'Ivan', 'Male', 30);
+            let manager = new ManagerClass('Petrov', 'Petr', 'Male', 40, 'Sales');
+
+            let outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `<p>Employee Data: ${employee.showData()}</p><p>Manager Data: ${manager.showData()}</p>`;
+        }
+    </script>
+</body>
+</html>

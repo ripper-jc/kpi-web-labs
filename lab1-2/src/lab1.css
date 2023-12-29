@@ -1,0 +1,84 @@
+.page_title{
+    padding: 25px 0px 15px;
+}
+h1{
+    font-size: 1.70em!important;
+    font-weight: 700!important;
+}
+h2{
+    text-align: center;
+    font-size: 1.50em!important;
+    color: grey!important;
+    margin: 20px 0px!important;
+    font-weight: 700!important;
+}
+h3{
+    font-size: 1.10em!important;
+    transition: all 0.5s ease;
+}
+header > div, nav{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.row_1{
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+}
+.row_1 a{
+    text-decoration: none;
+    color: grey;
+    font-size: 1em;
+    padding: 0px 15px;
+}
+.row_1 h3:hover{
+    color: black;
+}
+header .vertical_line{
+    border-left: 2px solid gray;
+    height: 2.5em;
+}
+@media (max-width:576px){
+    .vertical_line  {
+        display: none;
+    }
+}
+.actors_and{
+    border-bottom: 2px solid grey;
+    margin: 30px 0;
+}
+.actors_and ul{
+    list-style-type: disc;
+}
+
+.photo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.awards{
+    margin: 30px 0;
+}
+.row_footer{
+    padding: 50px 0 30px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.row_footer .vertical_line{
+    border-left: 2px solid grey;
+    height: 1.5em;  
+    margin: 0px;
+}
+h4{
+    font-size: 1.0em!important;
+    color: grey!important;    
+}
+h4 a{
+    text-decoration: none;
+    color: grey;
+}
